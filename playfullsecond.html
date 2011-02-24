@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Displaying the current time of a HTML5 video</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="style.css?v=2">
+  <!--[if lt IE 9]>
+  <script src="js/libs/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header><h1>Displaying the current time of a HTML5 video</h1></header>
+
+
+<div id="stage">
+  <video src="http://vid.ly/4f3q1f?content=video" controls></video> 
+  <div id="time"></div>
+</div>       
+<script>
+  (function(){
+    var v = document.getElementsByTagName('video')[0]
+    var t = document.getElementById('time');
+    v.addEventListener('timeupdate',function(event){
+      t.innerHTML = parseInt(v.currentTime) + ' - ' + v.currentTime;
+    },false);
+  })();
+</script>
+
+  <footer> <small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a> <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Syncing page content with HTML5 video</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://icant.co.uk" property="cc:attributionName" rel="cc:attributionURL">Christian Heilmann</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://isithackday.com/syncing-video" rel="dct:source">isithackday.com</a>.</small>
+    <span class="logo"><a href="http://www.w3.org/html/logo/">
+    <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-multimedia-semantics.png" width="197" height="64" alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics">
+    </a></span>  
+    </footer>
+</body>
+</html>
